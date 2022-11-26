@@ -32,19 +32,19 @@ class GmailCrawler:
         time.sleep(3)
         nextButton = self.driver.find_elements(By.XPATH,'//*[@id ="identifierNext"]')
         nextButton[0].click()
-        time.sleep(3)
+        time.sleep(5)
         passWordBox = self.driver.find_element(By.XPATH,
         '//*[@id ="password"]/div[1]/div / div[1]/input')
         passWordBox.send_keys(password)
     
         nextButton = self.driver.find_elements(By.XPATH,'//*[@id ="passwordNext"]')
         nextButton[0].click()
-        time.sleep(10)
+        time.sleep(5)
     
     def GetFirstMailsHeader(self):
-        time.sleep(10)
-        self.driver.find_element(By.XPATH,"(//tr[@class='zA zE'])[1]").click()
-        # self.driver.find_element(By.XPATH,"(//tr[@class='zA yO'])[1]").click()
+        time.sleep(5)
+        # self.driver.find_element(By.XPATH,"(//tr[@class='zA zE'])[1]").click()
+        self.driver.find_element(By.XPATH,"(//tr[@class='zA yO'])[1]").click()
         time.sleep(4)
         self.driver.find_element(By.XPATH,"//button[@aria-label='Close']").click()
         time.sleep(3)
@@ -52,7 +52,7 @@ class GmailCrawler:
         time.sleep(3)
 
         self.driver.find_element(By.XPATH,"//div[text()='Show original']").click()
-        time.sleep(10)
+        time.sleep(5)
         window_after = self.driver.window_handles[1]
         self.driver.switch_to.window(window_after)
         time.sleep(3)
@@ -93,7 +93,7 @@ def get_time():
 
     gmailCrawler = GmailCrawler(driver)
     print(args["password"])
-    gmailCrawler.Login(args["email"],args["password"]+"#")
+    gmailCrawler.Login(args["email"],args["password"])
     time.sleep(3)
 
     gmailCrawler.GetFirstMailsHeader()
