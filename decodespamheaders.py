@@ -115,9 +115,6 @@
 #   - dnspython
 #   - colorama
 #
-# Mariusz Banach / mgeeky, '21-'22
-# <mb [at] binary-offensive.com>
-#
 
 import os, sys, re
 import string
